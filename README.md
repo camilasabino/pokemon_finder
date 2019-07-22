@@ -11,7 +11,7 @@ Aplicación web para buscar Pokemones.
 * Instalación / Uso
 
 > Ubicar la carpeta del proyecto 'pokemon_finder' en la raíz de 'localhost'.</br>
-> Ubicados en 'pokemon_finder', ejecutar en la línea de comandos:
+> Se deben descargar las dependencias del proyecto. Ubicados en 'pokemon_finder', ejecutar en la línea de comandos:
 ```
 composer install
 ```
