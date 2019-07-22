@@ -6,10 +6,11 @@ require 'vendor/autoload.php';
 
 use PokemonFinder\PokemonApi;
 
+// Se instancia una API Pokemon.
 $pokemonApi = new PokemonApi();
 
+// Búsqueda de Pokemons según término ingresado.
 if (!empty($_GET['busqueda'])) {
-
     $nombre = limpiarInput($_GET['busqueda']);
 
     if (isset($_GET['check-exacta'])) {

@@ -9,12 +9,14 @@ class PokemonApi extends Api {
         $this->recursoBase = "pokemon/";
     }
 
+    /** Obtiene el recurso Pokemon con el nombre indicado. */
     function getPokemon($nombre) {
         $resultado = $this->get(null, null, $nombre);
 
         return empty($resultado) ? array() : array(new Pokemon($resultado));
     }
 
+	/** Obtiene todos los Pokemons existentes, y luego filtra por coincidencia parcial en el nombre. */
     function getAllAndFilter($nombre) {
         $resultados = $this->get(0, 964)['results'];
 
@@ -27,7 +29,7 @@ class PokemonApi extends Api {
 
         $pokemons = array();
 
-        set_time_limit(300);
+        set_time_limit(300); // Se establece un tiempo límite de búsqueda de 5 minutos.
 
         foreach ($resultados as $resultado) {
             $pokemon = $this->get(null, null, $resultado['name']);
@@ -37,6 +39,7 @@ class PokemonApi extends Api {
         return $pokemons;
     }
 
+    /** Obtiene una muestra de sesis Pokemons para mostrar al inicio. */
     function getMuestra() {
         $resultados = $this->get(6, 6)['results'];
 

@@ -8,7 +8,6 @@ use PokemonFinder\PokemonApi;
 final class PokemonFinderTest extends TestCase {
     
     function contienePokemons($resultados, $pokemons) {
-
         $resultados_test = array_filter($resultados, function($pokemon) use($pokemons) {
             if (in_array($pokemon->getNombre(), $pokemons)) {
                 return true;
