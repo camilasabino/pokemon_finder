@@ -24,7 +24,7 @@ final class PokemonFinderTest extends TestCase {
         $resultado = $pokemonApi->getPokemon('charizard');
 
         $this->assertEquals(count($resultado), 1);
-        $this->assertEquals($resultado[0]->getAlura(), 17);
+        $this->assertEquals($resultado[0]->getAltura(), 17);
     }
 
     public function testBusquedaParcialCharizard() {
@@ -55,8 +55,8 @@ final class PokemonFinderTest extends TestCase {
         $pokemonApi = new PokemonApi();
         $resultado = $pokemonApi->getAllAndFilter('pikachu p');
 
-        $this->assertTrue($resultado[0]->getNombre(), 'Pikachu Pop Star');
-        $this->assertTrue($resultado[0]->getPeso(), 60);
+        $this->assertEquals($resultado[0]->getNombre(), 'Pikachu Pop Star');
+        $this->assertEquals($resultado[0]->getPeso(), 60);
     }
 
     public function testBusquedaCaseInsensitive() {
